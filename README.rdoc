@@ -2,37 +2,39 @@
 
 Allows you to define constants if not defined on an object and redefine constants without warning.
 
+Define a constant if not defined:
+
     define_if_not_defined(:A, 1)
   
     assert_equal 1, A
   
-
+Define a constant and redefine it:
 
     define_if_not_defined(:B, 1)
     redefine_without_warning(:B, 2)
     
     assert_equal 2, B
     
-    
+Redefine a constant which should set the constant:    
 
     redefine_without_warning(:C, 3)
     
     assert_equal 3, C
 
-
+Define a constant within a module:
 
     Math.define_if_not_defined(:FOO, 2 * Math::PI)
     
     assert_equal 2 * Math::PI, Math::FOO
 
-
+Define and redefine a constant within a module:
 
     Math.define_if_not_defined(:BAR, 3)
     Math.redefine_without_warning(:BAR, 5)
 
     assert_equal 5, Math::BAR
 
-
+Redefine a constant within a module which should set the constant:
 
     Math.redefine_without_warning(:AMAZING, 3)
     
