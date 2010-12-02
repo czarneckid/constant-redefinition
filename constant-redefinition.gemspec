@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "constant-redefinition.gemspec",
     "lib/constant-redefinition.rb",
     "test/helper.rb",
     "test/test_constant-redefinition.rb"
