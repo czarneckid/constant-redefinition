@@ -40,6 +40,8 @@ Redefine a constant within a module which should set the constant:
     
     assert_equal 3, Math::AMAZING
     
+All credit is due to this post: http://stackoverflow.com/questions/3375360/how-to-redefine-a-ruby-constant-without-warning
+
 == Contributing to constant-redefinition
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

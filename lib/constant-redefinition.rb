@@ -1,4 +1,3 @@
-# All credit is due to this post: http://stackoverflow.com/questions/3375360/how-to-redefine-a-ruby-constant-without-warning
 class Object
   def define_if_not_defined(const, value)
     mod = self.is_a?(Module) ? self : self.class
