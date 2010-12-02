@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "constant-redefinition"
   gem.homepage = "http://github.com/czarneckid/constant-redefinition"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Allows you to define constants if not defined on an object and redefine constants without warning}
+  gem.description = %Q{Allows you to define constants if not defined on an object and redefine constants without warning}
   gem.email = "dczarnecki@agoragames.com"
   gem.authors = ["David Czarnecki"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
