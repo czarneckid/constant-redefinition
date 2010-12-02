@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{Allows you to define constants if not defined on an object and redefine constants without warning}
   gem.description = %Q{Allows you to define constants if not defined on an object and redefine constants without warning}
-  gem.email = "dczarnecki@agoragames.com"
+  gem.email = "czarneckid@acm.org"
   gem.authors = ["David Czarnecki"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
