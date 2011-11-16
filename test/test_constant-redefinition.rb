@@ -1,4 +1,4 @@
-require 'helper'
+require 'test_helper'
 
 class TestConstantRedefinition < Test::Unit::TestCase
   def test_can_define_a_constant_if_not_already_defined
@@ -9,9 +9,10 @@ class TestConstantRedefinition < Test::Unit::TestCase
   
   def test_can_redefine_a_constant_if_already_defined
     define_if_not_defined(:B, 1)
+    assert_equal 1, B
+
     redefine_without_warning(:B, 2)
-    
-    assert_equal 2, B
+    assert_equal 2, B    
   end
   
   def test_redefine_a_constant_sets_constant_if_not_already_defined
@@ -28,8 +29,9 @@ class TestConstantRedefinition < Test::Unit::TestCase
   
   def test_can_redefine_a_constant_in_a_module_if_already_defined
     Math.define_if_not_defined(:BAR, 3)
+    assert_equal 3, Math::BAR
+    
     Math.redefine_without_warning(:BAR, 5)
-
     assert_equal 5, Math::BAR
   end
   
