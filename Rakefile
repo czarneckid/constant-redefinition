@@ -9,7 +9,7 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-task :default => :test_rubies
+task :default => :test
 
 desc "Runs tests on Ruby 1.8.7 and 1.9.2"
 task :test_rubies do
