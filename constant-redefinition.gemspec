@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "constant-redefinition"
-  s.version     = "1.0.1"
+  s.version     = "1.1.0"
   s.authors     = ["David Czarnecki"]
   s.email       = ["me@davidczarnecki.com"]
   s.homepage    = "https://github.com/czarneckid/constant-redefinition"
