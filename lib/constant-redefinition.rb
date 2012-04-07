@@ -1,12 +1,10 @@
 class Object
   def define_if_not_defined(const, value)
     mod = self.is_a?(Module) ? self : self.class
+    mod.const_set(const, value) unless mod.const_defined?(const)
     if block_given?
-      mod.const_set(const, value) unless mod.const_defined?(const)
       yield      
       mod.send(:remove_const, const) if mod.const_defined?(const)
-    else
-      mod.const_set(const, value) unless mod.const_defined?(const)
     end
   end
 
