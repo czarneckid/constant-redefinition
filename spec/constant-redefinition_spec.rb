@@ -20,6 +20,20 @@ describe 'constant-redefinition' do
       Object.redefine_without_warning(:C, 3)
       3.should be(Object::C)
     end
+
+    it 'can set a constant and unset it if passed a block' do
+      Object.define_if_not_defined(:GOOBLE, 'gobble') do
+        Object.const_get(:GOOBLE).should == 'gobble'
+      end
+
+      lambda { Object.const_get(:GOOBLE) }.should raise_error(NameError)
+
+      Object.redefine_without_warning(:GOOBLE, 'gobble') do
+        Object.const_get(:GOOBLE).should == 'gobble'        
+      end
+
+      lambda { Object.const_get(:GOOBLE) }.should raise_error(NameError)
+    end
   end
 
   describe 'module operations' do
@@ -40,6 +54,26 @@ describe 'constant-redefinition' do
     it 'can set a constant if not already defined' do
       Math.redefine_without_warning(:AMAZING, 3)
       3.should be(Math::AMAZING)
+    end
+
+    it 'can set a constant and unset it if passed a block' do
+      Math.define_if_not_defined(:GOOBLE, 'gobble') do
+        Math.const_get(:GOOBLE).should == 'gobble'
+      end
+
+      lambda { Math.const_get(:GOOBLE) }.should raise_error(NameError)
+
+      Math.redefine_without_warning(:GOOBLE, 'gobble') do
+        Math.const_get(:GOOBLE).should == 'gobble'        
+      end
+
+      lambda { Math.const_get(:GOOBLE) }.should raise_error(NameError)
+
+      original_pi = Math::PI
+      Math.redefine_without_warning(:PI, 6) do
+        Math.const_get(:PI).should be(6)
+      end
+      Math.const_get(:PI).should == original_pi
     end
   end
 end

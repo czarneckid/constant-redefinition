@@ -11,7 +11,7 @@ end
 
 task :default => :spec
 
-desc "Runs tests on Ruby 1.8.7 and 1.9.2"
+desc "Runs tests on Ruby 1.8.7, 1.9.2 and 1.9.3"
 task :test_rubies do
   system "rvm 1.8.7@constant-redefinition_gem,1.9.2@constant-redefinition_gem,1.9.3@constant-redefinition_gem do rake spec"
 end

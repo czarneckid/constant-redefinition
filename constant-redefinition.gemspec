@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = "constant-redefinition"
   s.version     = "1.0.0"
   s.authors     = ["David Czarnecki"]
-  s.email       = ["czarneckid@acm.org"]
+  s.email       = ["me@davidczarnecki.com"]
   s.homepage    = "https://github.com/czarneckid/constant-redefinition"
   s.summary     = %q{Allows you to define constants if not defined on an object and redefine constants without warning}
   s.description = %q{Allows you to define constants if not defined on an object and redefine constants without warning}
