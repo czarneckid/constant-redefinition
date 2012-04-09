@@ -18,50 +18,58 @@ Define a constant if not defined:
 
 ```ruby
 define_if_not_defined(:A, 1)
-
-assert_equal 1, A
+ => nil 
+A
+ => 1 
 ```
 
 Define a constant and redefine it:
 
 ```ruby
 define_if_not_defined(:B, 1)
+ => nil 
 redefine_without_warning(:B, 2)
-
-assert_equal 2, B
+ => 2 
+B
+ => 2 
 ```
 
 Redefine a constant which should set the constant:    
 
 ```ruby
 redefine_without_warning(:C, 3)
-
-assert_equal 3, C
+ => 3 
+C
+ => 3 
 ```
 
 Define a constant within a module:
 
 ```ruby
 Math.define_if_not_defined(:FOO, 2 * Math::PI)
-
-assert_equal 2 * Math::PI, Math::FOO
+ => nil 
+Math::FOO
+ => 6.283185307179586 
 ```
 
 Define and redefine a constant within a module:
 
 ```ruby
 Math.define_if_not_defined(:BAR, 3)
+ => nil 
 Math.redefine_without_warning(:BAR, 5)
-
-assert_equal 5, Math::BAR
+ => 5 
+Math::BAR
+ => 5 
 ```
 
 Redefine a constant within a module which should set the constant:
 
 ```
 Math.redefine_without_warning(:AMAZING, 3)
-
-assert_equal 3, Math::AMAZING
+ => 3 
+Math::AMAZING
+ => 3 
 ```
 
 You can also define a constant using a block which will unset the constant after the block:
