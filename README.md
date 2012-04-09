@@ -75,9 +75,6 @@ Math::AMAZING
 You can also define a constant using a block which will unset the constant after the block:
 
 ```ruby
-require 'constant-redefinition'
- => true 
-
 class Freaks
   GOOBLE = 'gobble'
 end
@@ -96,6 +93,11 @@ NameError: uninitialized constant Freaks::HELLO
 You can also redefine a constant using a block, which will reset the constant to its original value after the block:
 
 ```ruby
+class Freaks
+  GOOBLE = 'gobble'
+end
+ => "gobble" 
+ 
 Freaks.redefine_without_warning(:GOOBLE, 'one of us') do
   p Freaks::GOOBLE
 end
