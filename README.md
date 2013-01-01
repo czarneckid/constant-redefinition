@@ -120,4 +120,4 @@ All credit is due to this post: http://stackoverflow.com/questions/3375360/how-t
 
 ## Copyright
 
-Copyright (c) 2010-2012 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2010-2013 David Czarnecki. See LICENSE.txt for further details.
