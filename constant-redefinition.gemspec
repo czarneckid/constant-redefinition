@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/czarneckid/constant-redefinition"
   s.summary     = %q{Allows you to define constants if not defined on an object and redefine constants without warning}
   s.description = %q{Allows you to define constants if not defined on an object and redefine constants without warning}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "constant-redefinition"
 
