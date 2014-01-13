@@ -18,58 +18,58 @@ Define a constant if not defined:
 
 ```ruby
 define_if_not_defined(:A, 1)
- => nil 
+ => nil
 A
- => 1 
+ => 1
 ```
 
 Define a constant and redefine it:
 
 ```ruby
 define_if_not_defined(:B, 1)
- => nil 
+ => nil
 redefine_without_warning(:B, 2)
- => 2 
+ => 2
 B
- => 2 
+ => 2
 ```
 
-Redefine a constant which should set the constant:    
+Redefine a constant which should set the constant:
 
 ```ruby
 redefine_without_warning(:C, 3)
- => 3 
+ => 3
 C
- => 3 
+ => 3
 ```
 
 Define a constant within a module:
 
 ```ruby
 Math.define_if_not_defined(:FOO, 2 * Math::PI)
- => nil 
+ => nil
 Math::FOO
- => 6.283185307179586 
+ => 6.283185307179586
 ```
 
 Define and redefine a constant within a module:
 
 ```ruby
 Math.define_if_not_defined(:BAR, 3)
- => nil 
+ => nil
 Math.redefine_without_warning(:BAR, 5)
- => 5 
+ => 5
 Math::BAR
- => 5 
+ => 5
 ```
 
 Redefine a constant within a module which should set the constant:
 
 ```
 Math.redefine_without_warning(:AMAZING, 3)
- => 3 
+ => 3
 Math::AMAZING
- => 3 
+ => 3
 ```
 
 You can also define a constant using a block which will unset the constant after the block:
@@ -78,13 +78,13 @@ You can also define a constant using a block which will unset the constant after
 class Freaks
   GOOBLE = 'gobble'
 end
- => "gobble" 
+ => "gobble"
 
 Freaks.define_if_not_defined(:HELLO, 'world') do
     p Freaks::HELLO
 end
 "world"
- => "world" 
+ => "world"
 
 p Freaks::HELLO
 NameError: uninitialized constant Freaks::HELLO
@@ -96,20 +96,20 @@ You can also redefine a constant using a block, which will reset the constant to
 class Freaks
   GOOBLE = 'gobble'
 end
- => "gobble" 
- 
+ => "gobble"
+
 Freaks.redefine_without_warning(:GOOBLE, 'one of us') do
   p Freaks::GOOBLE
 end
 
 "one of us"
- => "gobble" 
+ => "gobble"
 ```
 
 All credit is due to this post: http://stackoverflow.com/questions/3375360/how-to-redefine-a-ruby-constant-without-warning
 
 ## Contributing to constant-redefinition
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -120,4 +120,4 @@ All credit is due to this post: http://stackoverflow.com/questions/3375360/how-t
 
 ## Copyright
 
-Copyright (c) 2010-2013 David Czarnecki. See LICENSE.txt for further details.
+Copyright (c) 2010-2014 David Czarnecki. See LICENSE.txt for further details.
